@@ -23,9 +23,9 @@
 <div class="row">
     <div class="col s12">
         <div class="input-field inline">
-            <input id="contactName" type="text">
+            <input id="contactName" type="text" [(ngModel)]="newContactName">
             <label for="contactName">New Contact*</label>
         </div>
-        <a [routerLink]="['/contacts/new']" class="btn btn-floating pulse"><i class="material-icons">add</i></a>
+        <a [routerLink]="['/contacts/new', newContactName]" class="btn btn-floating pulse"><i class="material-icons">add</i></a>
     </div>
 </div>

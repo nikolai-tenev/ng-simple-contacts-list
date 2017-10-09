@@ -20,12 +20,25 @@ export class ContactDetailsPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.route.paramMap
-            .switchMap((params: ParamMap) => this.contactService.getContact(+params.get('id')))
+            .switchMap((params: ParamMap) => {
+                let id: number = +params.get('id');
+                let name = params.get('name');
+                if (id > 0) {
+                    return this.contactService.getContact(id)
+                } else {
+                    let newContact = new ContactModel();
+                    newContact.firstName = name;
+                    newContact.name = name;
+                    return Promise.resolve(newContact);
+                }
+            })
             .subscribe(contact => {
                 this.contact = contact;
-                this.addressService.getAddressesByContactId(contact.id).then((addresses: AddressModel[]) => {
-                    this.contact.addresses = addresses;
-                });
+                if (contact.id) {
+                    this.addressService.getAddressesByContactId(contact.id).then((addresses: AddressModel[]) => {
+                        this.contact.addresses = addresses;
+                    });
+                }
             });
     }
 

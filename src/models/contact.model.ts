@@ -2,12 +2,12 @@ import {AddressModel} from "./address.model";
 import {ContactDto} from "../dtos/contact.dto";
 
 export class ContactModel {
-    id: number;
-    name: string;
-    firstName: string;
-    lastName: string;
-    img: string;
-    addresses: AddressModel[];
+    id?: number;
+    name?: string;
+    firstName?: string;
+    lastName?: string;
+    img?: string;
+    addresses?: AddressModel[];
 
     constructor(contactDto?: ContactDto) {
         if (contactDto) {

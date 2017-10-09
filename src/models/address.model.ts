@@ -3,13 +3,13 @@ import {ContactModel} from "./contact.model";
 import {CountryModel} from "./country.model";
 
 export class AddressModel {
-    id: number;
-    street1: string;
-    street2: string;
-    town: string;
-    countryModel: CountryModel;
-    country: string;
-    contact: ContactModel;
+    id?: number;
+    street1?: string;
+    street2?: string;
+    town?: string;
+    countryModel?: CountryModel;
+    country?: string;
+    contact?: ContactModel;
     contactId?: number;
 
     constructor(addressDto?: AddressDto) {

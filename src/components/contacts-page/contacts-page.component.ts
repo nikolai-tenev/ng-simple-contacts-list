@@ -9,6 +9,7 @@ import {ContactService} from "../../services/contact.service";
     templateUrl: './contacts-page.component.html'
 })
 export class ContactsPageComponent implements OnInit {
+    newContactName: string;
     contacts: ContactModel[] = [];
     error: any;
 

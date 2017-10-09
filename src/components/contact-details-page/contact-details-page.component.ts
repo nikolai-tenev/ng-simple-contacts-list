@@ -22,12 +22,14 @@ export class ContactDetailsPageComponent implements OnInit {
         this.route.paramMap
             .switchMap((params: ParamMap) => {
                 let id: number = +params.get('id');
-                let name = params.get('name');
+                let name: string = params.get('name');
                 if (id > 0) {
                     return this.contactService.getContact(id)
-                } else {
+                } else if (name.length > 0) {
+                    let names = name.split(" ");
                     let newContact = new ContactModel();
-                    newContact.firstName = name;
+                    newContact.firstName = names[0];
+                    newContact.lastName = names[1];
                     newContact.name = name;
                     return Promise.resolve(newContact);
                 }

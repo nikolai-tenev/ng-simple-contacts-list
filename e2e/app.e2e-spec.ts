@@ -1,14 +1,14 @@
 import { AppPage } from './app.po';
 
-describe('ng-simple-contacts-list App', () => {
+describe('Simple Contacts List App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display info about me', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('I develop with java, javascript, php and no/sql.');
   });
 });

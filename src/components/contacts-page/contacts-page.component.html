@@ -1,0 +1,31 @@
+<h2>Contact List</h2>
+<p class="text-flow grey-text">You have {{contacts.length}} contacts.</p>
+<ul>
+    <li *ngFor="let contact of contacts">
+        <a [routerLink]="['/contacts', contact.id]">
+            <div class="row">
+                <div class="col s12 m8 l6">
+                    <div class="card-panel grey lighten-5 z-depth-1">
+                        <div class="row valign-wrapper">
+                            <div class="col s2">
+                                <img class="circle responsive-img" src="{{contact.img}}" alt="{{contact.name}}" title="{{contact.name}}">
+                            </div>
+                            <div class="col s10">
+                                <span class="black-text">{{contact.name}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
+<div class="row">
+    <div class="col s12">
+        <div class="input-field inline">
+            <input id="contactName" type="text">
+            <label for="contactName">New Contact*</label>
+        </div>
+        <a [routerLink]="['/contacts/new']" class="btn btn-floating pulse"><i class="material-icons">add</i></a>
+    </div>
+</div>

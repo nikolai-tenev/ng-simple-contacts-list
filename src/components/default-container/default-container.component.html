@@ -1,0 +1,19 @@
+<nav>
+    <div class="nav-wrapper blue white-text">
+        <ul class="left">
+            <li><a id="show-side-nav" data-activates="slide-out"><i class="material-icons">menu</i></a></li>
+            <li>Contact List App</li>
+        </ul>
+    </div>
+</nav>
+<ul id="slide-out" class="side-nav">
+    <li><a href="/home" class="waves-effect"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="/contacts" class="waves-effect"><i class="material-icons">contacts</i>Contacts</a></li>
+</ul>
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel white">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
